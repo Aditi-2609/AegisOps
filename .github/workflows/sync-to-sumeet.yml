@@ -29,7 +29,7 @@ jobs:
       - name: Fetch all branches and tags
         run: |
           git fetch origin \
-            '+refs/heads/*:refs/heads/*' \
+            '+refs/heads/*:refs/remotes/origin/*' \
             '+refs/tags/*:refs/tags/*'
 
       - name: Push branches and tags to Sumeet
@@ -40,5 +40,5 @@ jobs:
             "https://x-access-token:${SYNC_TOKEN}@github.com/Sumeet0905/AegisOps.git"
 
           git push peer \
-            'refs/heads/*:refs/heads/*' \
+            'refs/remotes/origin/*:refs/heads/*' \
             'refs/tags/*:refs/tags/*'
