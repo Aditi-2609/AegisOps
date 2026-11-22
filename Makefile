@@ -1,4 +1,4 @@
-.PHONY: install test lint api up down logs
+.PHONY: install test lint migrate api up down logs
 
 install:
 	python -m pip install -e ".[dev]"
@@ -7,7 +7,10 @@ test:
 	pytest -q
 
 lint:
-	ruff check app tests
+	ruff check app tests scripts
+
+migrate:
+	python scripts/migrate.py
 
 api:
 	uvicorn app.main:app --reload
