@@ -1,7 +1,5 @@
 from app.domain.schemas import IssueCategory, Priority, TriageRequest, TriageResult
 
-
-
 _CATEGORY_TERMS: tuple[tuple[IssueCategory, tuple[str, ...]], ...] = (
     (IssueCategory.DAMAGED_PRODUCT, ("damaged", "broken", "cracked", "defective")),
     (IssueCategory.WRONG_ITEM, ("wrong item", "incorrect item", "not what i ordered")),
