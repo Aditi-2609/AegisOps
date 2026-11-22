@@ -10,7 +10,7 @@ lint:
 	ruff check app tests scripts
 
 migrate:
-	python scripts/migrate.py
+	python -m scripts.migrate
 
 api:
 	uvicorn app.main:app --reload
