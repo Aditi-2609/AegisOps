@@ -22,7 +22,7 @@ def main() -> None:
             ).fetchone()
             if applied:
                 continue
-            connection.execute(migration.read_text(encoding="utf-8"))
+            connection.execute(migration.read_text(encoding="utf-8"), prepare=False)
             connection.execute(
                 "INSERT INTO schema_migrations (filename) VALUES (%s)",
                 (migration.name,),
