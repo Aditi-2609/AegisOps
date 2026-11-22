@@ -42,7 +42,7 @@ python -m venv .venv
 # macOS/Linux: source .venv/bin/activate
 python -m pip install -e ".[dev]"
 cp .env.example .env
-python scripts/migrate.py
+python -m scripts.migrate
 uvicorn app.main:app --reload
 ```
 
